@@ -1,0 +1,347 @@
+:root {
+  --navy: #1f3c8d;
+  --navy-dark: #152754;
+  --primary: #2f55d4;
+  --primary-soft: #4265e9;
+  --soft: #f7f9ff;
+  --soft-2: #f3f6fc;
+  --border-soft: #e5e9f3;
+  --text-main: #1a1f36;
+  --text-muted: #6c7a91;
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --gold: #d4a017;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body { 
+  height: 100%; 
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text-main);
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { 
+  flex: 1 0 auto;
+ }
+
+/* NAVBAR */
+.main-navbar {
+  background: var(--navy) !important;
+  border-radius: 0 0 26px 26px;
+  min-height: 70px;
+  padding-block: 0.6rem;
+}
+
+.logo-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.logo-aa {
+  color: var(--gold);
+}
+
+.navbar-dark .nav-link {
+  color: #eaf0ff;
+  font-weight: 500;
+  margin-left: 0.75rem;
+}
+
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link.active {
+  color: var(--gold);
+}
+
+/* ===== MOBILE NAV ===== */
+@media (max-width: 991.98px) {
+  .main-navbar {
+    padding-bottom: 14px;
+    border-radius: 0 0 26px 26px;
+    overflow: hidden;
+  }
+
+  .main-navbar .navbar-collapse {
+    background: transparent !important;
+    border: 0 !important;
+    margin-top: 10px;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .main-navbar .navbar-nav {
+    width: 100%;
+    margin-top: 6px;
+    gap: 6px;
+  }
+
+  .navbar-dark .nav-link {
+    margin-left: 0 !important;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .navbar-dark .nav-link:hover,
+  .navbar-dark .nav-link.active {
+    color: var(--gold);
+    background: rgba(255, 255, 255, 0.10);
+  }
+}
+
+/* HERO */
+.hero-section {
+  background: radial-gradient(circle at top left, #f0f4ff 0, #ffffff 55%);
+  padding: 90px 0 90px;
+}
+
+.hero-row {
+  column-gap: 2rem;
+  gap: 2rem !important;
+}
+
+@media (min-width: 992px) {
+  .hero-row .col-lg-6 {
+    max-width: 48%;
+  }
+  .hero-row .col-lg-5 {
+    max-width: 42%;
+  }
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: var(--primary);
+}
+
+.hero-sub {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+}
+
+.hero-btn {
+  background: #22386e;
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 10px 24px rgba(31, 60, 141, 0.35);
+  transition: 0.25s ease;
+}
+
+.hero-btn:hover {
+  background: var(--gold);
+  color: #111;
+  box-shadow: 0 12px 28px rgba(31, 60, 141, 0.45);
+}
+
+.hero-img {
+  max-width: 420px;
+  width: 100%;
+  animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* GENERIC SECTIONS */
+.section-padding {
+  padding: 80px 0 84px;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-soft {
+  background: var(--soft-2);
+}
+
+/* TIPS */
+.tip-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(15, 27, 62, 0.09);
+  background: #ffffff;
+  padding: 1.3rem 1.4rem;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 10px rgba(15, 27, 62, 0.02);
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(15, 27, 62, 0.12);
+  border-color: rgba(66, 101, 233, 0.35);
+}
+
+.tip-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--soft-2);
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+/* MED CARDS */
+.med-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  padding: 1.3rem 1.4rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  transition: 0.2s ease;
+}
+
+.med-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.09);
+}
+
+.med-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* FAQ */
+.faq-wrapper {
+  max-width: 760px;
+}
+
+.accordion-item {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px rgba(15, 27, 62, 0.04);
+}
+
+.accordion-button {
+  font-weight: 500;
+  padding: 0.9rem 1.2rem;
+  gap: 0.75rem;
+}
+
+.accordion-button span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.faq-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #eef2ff;
+  color: var(--navy-dark);
+  box-shadow: none;
+  border-left: 3px solid var(--primary);
+}
+
+.accordion-button::after {
+  transform: scale(0.9);
+}
+
+.accordion-body {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* FOOTER */
+.main-footer {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: auto;
+}
+
+.main-footer .footer-links a {
+  color: #e5e8f5;
+  opacity: 0.9;
+}
+
+.main-footer .footer-links a:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991.98px) {
+  .hero-section {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-img {
+    max-width: 280px;
+  }
+
+  .hero-row {
+    row-gap: 2.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .section-padding {
+    padding: 64px 0 70px;
+  }
+}
